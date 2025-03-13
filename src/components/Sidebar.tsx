@@ -2,25 +2,41 @@ import { CiLogout } from "react-icons/ci";
 import Image from "next/image";
 import Link from "next/link";
 import { SidebarItem } from "./SidebarItem";
-import { IoCalendarOutline, IoCheckboxOutline, IoListOutline } from "react-icons/io5";
+import {
+  IoBasketOutline,
+  IoCalendarOutline,
+  IoCheckboxOutline,
+  IoCodeWorkingOutline,
+  IoListOutline,
+} from "react-icons/io5";
 
 const menuItems = [
-    {
-        icon: <IoCalendarOutline />,
-        title: 'Dashboard',
-        path: '/dashboard'
-    },
-    {
-        icon: <IoCheckboxOutline />,
-        title: 'Rest Todos',
-        path: '/dashboard/rest-todos'
-    },
-    {
-        icon: <IoListOutline />,
-        title: 'Server actions',
-        path: '/dashboard/server-todos'
-    },
-]
+  {
+    icon: <IoCalendarOutline />,
+    title: "Dashboard",
+    path: "/dashboard",
+  },
+  {
+    icon: <IoCheckboxOutline />,
+    title: "Rest Todos",
+    path: "/dashboard/rest-todos",
+  },
+  {
+    icon: <IoListOutline />,
+    title: "Server actions",
+    path: "/dashboard/server-todos",
+  },
+  {
+    icon: <IoCodeWorkingOutline />,
+    title: "Cookies",
+    path: "/dashboard/cookies",
+  },
+  {
+    icon: <IoBasketOutline />,
+    title: "Productos",
+    path: "/dashboard/products",
+  },
+];
 
 export const Sidebar = () => {
   return (
@@ -55,9 +71,9 @@ export const Sidebar = () => {
         </div>
 
         <ul className="space-y-2 tracking-wide mt-8">
-            { menuItems.map( item => (
-                <SidebarItem key={item.path} {...item}/>
-            ))}            
+          {menuItems.map((item) => (
+            <SidebarItem key={item.path} {...item} />
+          ))}
         </ul>
       </div>
 
